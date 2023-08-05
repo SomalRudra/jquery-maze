@@ -1,7 +1,7 @@
 
 let isStartedMaze = false;
 
-$(function () {
+$(document).ready(function () {
 
     setupMazeGame();
 
@@ -11,7 +11,7 @@ function setupMazeGame() {
     $("#start").on('click mouseenter', function () {
         setBoundaryEvents();
         setEndOptionEvents();
-        //alert("start");
+        $("#status").text("Game Started! Keep moving your pointer until you reach E")
     });
 
 }
@@ -71,6 +71,7 @@ function resetElementsAndValues() {
 
     //remove message 
     $("#boundary1").text("");
+    $("#status").text("Click the \"S\" to begin")
 
     //reset event handlers 
     $("div.boundary").off("mouseenter");
